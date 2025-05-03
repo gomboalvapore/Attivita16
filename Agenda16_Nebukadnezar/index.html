@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annota Attività</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-10-year-range.min.js"></script>
+</head>
+<body>
+    <h1>Meine täglichen Aktivitäten</h1>
+    <div class="grid-container">
+        <div class="grid-header player1-header">Nebukadnezar</div>
+        <div class="grid-header player2-header">Crosta</div>
+        <div class="grid-header player3-header">Tansues</div>
+        <div class="grid-header player4-header">Twelve</div>
+
+        <div class="grid-item checkbox-item player1-column">
+            <label for="activity1">Prestige:</label>
+            <input type="checkbox" id="activity1" name="activity1">
+        </div>
+        <div class="grid-item checkbox-item player2-column">
+            <label for="activity2">Prestige:</label>
+            <input type="checkbox" id="activity2" name="activity2">
+        </div>
+        <div class="grid-item checkbox-item player3-column">
+            <label for="activity3">Prestige:</label>
+            <input type="checkbox" id="activity3" name="activity3">
+        </div>
+        <div class="grid-item checkbox-item player4-column">
+            <label for="activity4">Prestige:</label>
+            <input type="checkbox" id="activity4" name="activity4">
+        </div>
+        <div class="grid-item checkbox-item player1-column">
+            <label for="activity5">1750 activity:</label>
+            <input type="checkbox" id="activity5" name="activity5">
+        </div>
+        <div class="grid-item checkbox-item player2-column">
+            <label for="activity6">1750 activity:</label>
+            <input type="checkbox" id="activity6" name="activity6">
+        </div>
+        <div class="grid-item checkbox-item player3-column">
+            <label for="activity7">1750 activity:</label>
+            <input type="checkbox" id="activity7" name="activity7">
+        </div>
+        <div class="grid-item checkbox-item player4-column">
+            <label for="activity8">1750 activity:</label>
+            <input type="checkbox" id="activity8" name="activity8">
+        </div>
+        <div class="grid-item text-item player1-column">
+            <label for="activity9">Titanite:</label>
+            <input type="text" id="activity9" name="activity9">
+        </div>
+        <div class="grid-item text-item player2-column">
+            <label for="activity10">Titanite:</label>
+            <input type="text" id="activity10" name="activity10">
+        </div>
+        <div class="grid-item text-item player3-column">
+            <label for="activity11">Titanite:</label>
+            <input type="text" id="activity11" name="activity11">
+        </div>
+        <div class="grid-item text-item player4-column">
+            <label for="activity12">Titanite:</label>
+            <input type="text" id="activity12" name="activity12">
+        </div>
+
+        <button type="button" class="reset-column-button" data-columns="1,5,9">Reset Nebu</button>
+        <button type="button" class="reset-column-button" data-columns="2,6,10">Reset Crosta</button>
+        <button type="button" class="reset-column-button" data-columns="3,7,11">Reset Tansues</button>
+        <button type="button" class="reset-column-button" data-columns="4,8,12">Reset Twelve</button>
+
+        <div class="reset-column-settings player1-column">
+            <label for="utcOffset1">Offset UTC:</label>
+            <input type="number" id="utcOffset1" min="-12" max="14" value="-3">
+            <label for="resetTime1">Orario Reset (UTC):</label>
+            <input type="time" id="resetTime1" value="05:00">
+            <div id="countdownCol1" class="countdown"></div>
+        </div>
+
+        <div class="reset-column-settings player2-column">
+            <label for="utcOffset2">Offset UTC:</label>
+            <input type="number" id="utcOffset2" min="-12" max="14" value="-3">
+            <label for="resetTime2">Orario Reset (UTC):</label>
+            <input type="time" id="resetTime2" value="05:00">
+            <div id="countdownCol2" class="countdown"></div>
+        </div>
+
+        <div class="reset-column-settings player3-column">
+            <label for="utcOffset3">Offset UTC:</label>
+            <input type="number" id="utcOffset3" min="-12" max="14" value="-4">
+            <label for="resetTime3">Orario Reset (UTC):</label>
+            <input type="time" id="resetTime3" value="05:00">
+            <div id="countdownCol3" class="countdown"></div>
+        </div>
+
+        <div class="reset-column-settings player4-column">
+            <label for="utcOffset4">Offset UTC:</label>
+            <input type="number" id="utcOffset4" min="-12" max="14" value="-6">
+            <label for="resetTime4">Orario Reset (UTC):</label>
+            <input type="time" id="resetTime4" value="05:00">
+            <div id="countdownCol4" class="countdown"></div>
+        </div>
+
+        <div class="grid-title">
+            <h2>Gildenuhr</h2>
+        </div>
+        <div class="grid-item text-item player1-column">
+            <label for="guildSeason1">Season:</label>
+            <input type="text" id="guildSeason1" name="guildSeason1">
+        </div>
+        <div class="grid-item text-item player2-column">
+            <label for="guildSeason2">Season:</label>
+            <input type="text" id="guildSeason2" name="guildSeason2">
+        </div>
+        <div class="grid-item text-item player3-column">
+            <label for="guildSeason3">Season:</label>
+            <input type="text" id="guildSeason3" name="guildSeason3">
+        </div>
+        <div class="grid-item text-item player4-column">
+            <label for="guildSeason4">Season:</label>
+            <input type="text" id="guildSeason4" name="guildSeason4">
+        </div>
+    </div>
+
+    <div class="reset-time">
+        <label for="resetTimeGuild">Neustartzeit der Gildenuhr (UTC 0):</label>
+        <input type="time" id="resetTimeGuild" name="resetTimeGuild" value="02:00">
+        <button id="resetButtonGuild">Reset Gildenuhr</button>
+        <div id="countdownGuild" class="countdown"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
