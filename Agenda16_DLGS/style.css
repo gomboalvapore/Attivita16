@@ -1,0 +1,220 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.grid-header {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.player1-header {
+    background-color: #CDE5EC;
+}
+
+.player2-header {
+    background-color: #CECDEC;
+}
+
+.player3-header {
+    background-color: #CEECCD;
+}
+
+.player4-header {
+    background-color: #E7ECCD;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.grid-item label {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    position: relative; /* Crea un contesto di posizionamento per la checkbox */
+    padding-left: 30px; /* Spazio per la checkbox */
+}
+
+.grid-item.checkbox-item label input[type="checkbox"] {
+    position: absolute;
+    left: 10px; /* Posiziona la checkbox a 10px dal bordo sinistro del label */
+    top: 2px; /* Allinea verticalmente la checkbox (potrebbe richiedere piccoli aggiustamenti) */
+}
+
+.grid-item input[type="text"],
+.grid-item input[type="time"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.grid-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.grid-item.timer-item {
+    flex-direction: column;
+}
+
+.grid-item.timer-item button {
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.grid-item.timer-item button:hover {
+    background-color: #1e7e34;
+}
+
+.reset-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-direction: column; /* Cambiato in column per allineare meglio i blocchi di reset */
+    width: 80%; /* Stessa larghezza del grid container */
+    max-width: 800px;
+    padding: 15px;
+    border: 1px solid #eee;
+    box-sizing: border-box; /* Assicura che padding e border siano inclusi nella larghezza */
+}
+
+.reset-time > div { /* Stile per i singoli blocchi di reset (colonne e gruppo) */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%; /* Occupano tutta la larghezza del contenitore reset-time */
+    box-sizing: border-box;
+}
+
+.reset-time > div label {
+    font-weight: bold;
+    flex-shrink: 0; /* Evita che le label si restringano troppo */
+}
+
+.reset-time > div input[type="time"],
+.reset-time > div input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1; /* Fanno espandere gli input per occupare lo spazio disponibile */
+    box-sizing: border-box;
+}
+
+.reset-time > div button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.reset-time > div button:hover {
+    background-color: #0056b3;
+}
+
+.countdown {
+    font-size: 0.8em;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* Stili per lo sfondo delle colonne */
+.player1-column {
+    background-color: #CDE5EC;
+}
+
+.player2-column {
+    background-color: #CECDEC;
+}
+
+.player3-column {
+    background-color: #CEECCD;
+}
+
+.player4-column {
+    background-color: #E7ECCD;
+}
+
+/* Stili per i blocchi di impostazione del reset per colonna */
+.reset-column-settings {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px; /* Ridotto il margine per stare più vicino alle colonne */
+}
+
+.reset-column-settings h3 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.reset-column-settings label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.reset-column-settings input[type="number"],
+.reset-column-settings input[type="time"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%; /* Occupano tutta la larghezza del contenitore */
+}
+
+.reset-column-settings button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    width: 100%; /* Occupano tutta la larghezza del contenitore */
+    box-sizing: border-box;
+}
+
+.reset-column-settings button:hover {
+    background-color: #0056b3;
+}
+
+.reset-column-settings .countdown {
+    font-size: 0.8em;
+    margin-top: 5px;
+    color: #555;
+    text-align: center;
+}
